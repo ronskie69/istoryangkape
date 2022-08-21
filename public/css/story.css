@@ -1,0 +1,52 @@
+.create-story{
+    margin-top: 150px;
+}
+.hide{
+    display: none;
+    transition: .3s;
+}
+#toggle_cards {
+    display: none;
+}
+.btn-coffee {
+    background-color: #56290d;
+    color: #fff;
+    border-radius: 30px;
+    padding: 6px 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+input[type=text], .textarea, .selector{
+    border: solid 1px #56290d;
+    border-radius: 30px;
+    color: #000;
+    padding: 8px 20px;
+    box-sizing: border-box;
+}
+.textarea {
+    border-radius: 20px;
+}
+input[type=text]:focus, .textarea:focus, .selector:focus {
+    border-color: #56290d;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    transition: ease-in-out .3s;
+}
+.deleteStory {
+    background-color: #56290d;
+    color: #fff;
+    border-radius: 30px;
+    padding: 4px 10px;
+    will-change: transform;
+}
+.deleteStory:hover {
+    filter: brightness(110%);
+    transform: scale(1.05);
+    transition: ease-in-out .3s;
+}
+@media screen and (max-width: 650px) {
+    #all_my_stories {
+        margin-top: 40px;
+    }
+    #toggle_cards {
+        display: block;
+    }
+}

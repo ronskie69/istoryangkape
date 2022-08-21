@@ -1,0 +1,35 @@
+.row {
+    margin-top: 120px;
+}
+#error_password {
+    display: none;
+    transition: .4s;
+}
+.showError {
+    display: block;
+}
+input[type=password], input[type=email] {
+    border: solid 1px #56290d;
+    border-radius: 30px;
+    color: #000;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+input[type=password]:focus, input[type=email]:focus {
+    border-color: #56290d;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    transition: ease-in-out .3s;
+}
+.btn-coffee {
+    background-color: #56290d;
+    color: #fff;
+    border-radius: 30px;
+    padding: 6px 20px;
+    will-change: transform;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.btn-coffee:hover{
+    filter: brightness(110%);
+    transform: scale(1.045);
+    transition: ease-in-out .3s;
+}

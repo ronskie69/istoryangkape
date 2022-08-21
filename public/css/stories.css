@@ -1,0 +1,136 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-Regular.ttf');
+}
+* {
+    font-family: 'Nunito', sans-serif;
+}
+body{
+    background: #f4f5f6;
+    width: 100%;
+}
+.navbar {
+    background-color: #fff !important;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.stories-wrapper {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+}
+.stories-wrapper h2 {
+    margin-top: 150px;
+}
+.form {
+    margin-bottom: 20px;
+}
+.form .searcher_box, .story_filters {
+    width: 100%;
+    background: #fff;
+    border: solid 1px #56290d;
+    border-radius: 30px;
+    outline: none;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 4px 12px;
+    box-sizing: border-box;
+}
+.story_filters {
+    font-size: 1.1rem;
+}
+.form .searcher_box button {
+    background: none;
+    width: 40px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+}
+.searcher_box input {
+    font-weight: 400;
+    border: none;
+    outline: none;
+    caret-color: #56290d;
+    width: 100%;
+    background: transparent;
+    font-size: 1.1rem;
+    padding-left: 10px;
+}
+.card {
+    height: fit-content;
+    width: 100%;
+    padding: 0 !important;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.row {
+    position: relative;
+    margin-bottom: 20px;
+}
+.card .card-header {
+    border: solid 1px #56290d;
+    background: #56290d;
+    margin-top: 0px;
+    padding:0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    color: #fff;
+    padding-left: 20px;
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card .card-header i {
+    cursor: pointer;
+    margin-right: 20px;
+    transform: translateY(-5px);
+    color: #fff;
+}
+.card .card-header i:hover{
+    transform: scale(1.06);
+    transition: ease-in-out .4s;
+}
+.card-body p.story_text {
+    font-size: 1rem;
+}
+.story-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.story-controls a {
+    color: #fff !important;
+    text-decoration: none !important;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #56290d;
+    will-change: transform;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.story-controls a:hover {
+    color: #fff !important;
+    transform: scale(1.045);
+    filter: brightness(110%);
+    transition: ease-in-out .3s;
+}
+.accordionate {
+    position: relative;
+    overflow: hidden;
+    max-height: 80px;
+    transition: 0.3s ease-in-out;
+}
+.activeReadable {
+    max-height: fit-content;
+}
+.toggle-accordion {
+    cursor: pointer;
+    color: #b8b0b0;
+    font-size: 13px;
+    text-decoration: underline;
+}

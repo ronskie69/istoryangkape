@@ -1,0 +1,32 @@
+<% if(stories.length > 0) { 
+    let options = { month: 'long', day: '2-digit', year: 'numeric'}
+    %>
+    <% stories.map(story => {%>
+        <div 
+            class="card card-story <%=story.storyType%>"
+            data-sender="<%=story.senderEmail%>"
+            data-id="<%=story.id%>" 
+            id="<%= story.id %>"
+        >
+            <div class="card-header">
+                <h6 class="card-title"><%=story.title%>
+                    <span style="color: #ddd; margin-left: 6px; font-size: 11px;"><%=story.date.toLocaleDateString('en-US').split(',')[0] %></span>
+                </h6>
+                <div class="card-header-info">
+                    <a target="_blank" class="share_twt"><i class="fab fa-twitter" title="Share on Twitter"></i></a>
+                </div>
+            </div>
+            <div class="card-body">
+                <p 
+                    class="card-text accordionate story_text" 
+                    id="accordion"><%=story.story%><p class="toggle-accordion">Read More</p>
+                </p>
+                <p class="card-text d-inline">
+                    <small class="text-muted">Shared by <span class="sharer"><%=story.nickname %></span>
+                </small></p>
+            </div>
+        </div>
+    <% }) %>
+<% }  else { %>
+    <h5 class="text-center lead">No stories added yet.</h5>
+<% } %>

@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-Regular.ttf');
+}
+* {
+    font-family: 'Nunito', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+.landing {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+.landing .content {
+    position: absolute;
+    top: 50%;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.landing .content img {
+    max-height: 300px;
+    max-width: 400px;
+}
+.landing .content h4 {
+    margin-top: -25px;
+    font-size: 1.5rem;
+    color: #56290d;
+}
+.landing .content .buttons-actions {
+    display: inline-block;
+}
+.landing .content .buttons-actions .btn-coffee {
+    padding: .5rem 20px;
+    font-size: 17px;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50px;
+    background-color: #56290d;
+}
+.landing .content .buttons-actions .btn-coffee:hover {
+    filter: brightness(110%);
+    box-shadow: none !important;
+    transform: scale(1.05);
+    transition: ease-in-out .3s;
+}
+.custom-shape-divider-bottom-1660889083 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1660889083 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 129px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1660889083 .shape-fill {
+    fill: #56290d;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+    .custom-shape-divider-bottom-1660889083 svg {
+        width: calc(100% + 1.3px);
+        height: 86px;
+    }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .landing {
+        height: 100vh;
+        width: 100%;
+    }
+    .landing .content img {
+        height: 200px;
+        width: 300px;
+    }
+    .landing .content h4 {
+        font-size: 1.2rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .landing .content .buttons-actions .btn-coffee {
+        font-size: 1rem;
+        margin: 5px;
+    }
+    .custom-shape-divider-bottom-1660889083 svg {
+        width: calc(100% + 1.3px);
+        height: 86px;
+    }
+}

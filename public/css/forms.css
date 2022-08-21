@@ -1,0 +1,163 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-Regular.ttf');
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+}
+.forms {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    width: 100%;
+}
+.forms .content {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form {
+    color: #56290d !important;
+    font-weight: bolder;
+    margin-top: 70px;
+    height: 500px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 5px;
+    display: flex;
+}
+.form .form-content {
+    height: 100%;
+    padding: 10px;
+}
+.form hr {
+    height: 1px;
+}
+.form .brand {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    padding: 0 5px;
+    box-sizing: border-box;
+    width: 100%;
+}
+.form .brand img {
+    border-right: solid 2px #56290d;
+    display: block;
+    height: 300px;
+    width: 100%;
+    margin: auto auto;
+}
+.form .form-content input[type="email"]:focus, 
+.form .form-content input[type="password"]:focus{
+    border-color: #56290d;
+    box-shadow: none !important;
+}
+.actions {
+    font-size: 15px;
+}
+.btn-coffee  {
+    font-size: 17px;
+    color: #fff !important;
+    background-color: #56290d;
+    border-radius: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+.btn-coffee-link {
+    background: none !important;
+    color: #56290d !important;
+    border: solid 1px #56290d;
+}
+.btn-coffee:hover, .btn-coffee:focus {
+    background: none !important;
+    color: #56290d !important;
+    border: solid 1px #56290d;
+    transition: ease-in-out .3s;
+}
+.btn-coffee-link:hover, .btn-coffee-link:focus {
+    background: #56290d !important;
+    color: #fff !important;
+    transition: ease-in-out .3s;
+}
+.brand {
+    filter: contrast(150%) brightness(150%);
+    height: 240px;
+}
+.continueBtn {
+    background-color: #56290d;
+    color: #fff;
+    will-change: transform;
+    transition: .3s;
+}
+.continueBtn:hover{
+    color: #fff;
+    transform: scale(1.1);
+}
+@media (max-width: 767px){
+    .forms {
+        height: fit-content;
+    }
+    .forms .content {
+        position: relative;
+        margin-top: 40px;
+    }
+    .forms .content img {
+        border-right: none;
+        height: 140px;
+        width: 200px;
+    }
+    .forms .row {
+        height: 100%;
+        display: flex !important;
+    }
+}
+.custom-shape-divider-bottom-1660889083 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1660889083 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 129px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1660889083 .shape-fill {
+    fill: #56290d;
+}
+
+/** For tablet devices **/
+@media (min-width: 992px) and (max-width: 1023px) {
+    .custom-shape-divider-bottom-1660889083 svg {
+        width: calc(100% + 1.3px);
+        height: 86px;
+    }
+}
+
+/** For mobile devices **/
+@media (max-width: 991px) {
+    .custom-shape-divider-bottom-1660889083 svg {
+        display: none;
+    }
+}

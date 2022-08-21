@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../components/header') %>
+    <link rel="stylesheet" href="/css/stories.css">
+    <link rel="stylesheet" href="/css/story.css">
+    <title>Create Story</title>
+</head>
+<body>
+    <%- include('../components/navbar') %>
+    <div class="create-story container">
+        <div class="row text-dark">
+            <div class="col-lg-8 col-md-6 col-sm-12">
+                <form class="form" id="form_storu" autocomplete="off">
+                    <h4 class="text-center">Create New Story</h4>
+                    <div class="form-group">
+                        <label for="nickname" class="mt-2">Your Nickname</label>
+                        <input 
+                            type="text"
+                            class="form-control" 
+                            name="nickname"
+                            maxlength="18"
+                            id="_nickname"
+                            required
+                            placeholder="Enter your desired nickname/alias to be displayed in your story..."
+                            value="<%=nickname%>"
+                        >
+                        <small class="text-danger">
+                            Note: Nickname is permanent. You cannot change it so be careful in your input.
+                        </small>
+                      </div>
+                      <input 
+                            type="hidden"
+                            class="form-control" 
+                            name="senderEmail"
+                            id="_email"
+                            required
+                            placeholder="Enter your desired nickname/alias to be displayed in your story..."
+                            value="<%=email%>"
+                        >
+                      <div class="form-group">
+                        <label for="title" class="mt-2">Story/Quote Title</label>
+                        <input 
+                            type="text"
+                            class="form-control" 
+                            name="title"
+                            maxlength="20"
+                            id="_title"
+                            required
+                            placeholder="Enter your story title here..."
+                        >
+                      </div>
+                      <div class="form-group">
+                        <label for="story_type" class="mt-2">Kind/Type of Story</label>
+                        <select name="story_type" name="storyType" id="_storyType" required class="selector form-control">
+                            <option value="Quote" selected>Quote</option>
+                            <option value="Relationship">Relationship</option>
+                            <option value="Financial">Financial</option>
+                            <option value="Realization">Realization</option>
+                            <option value="Self">Self</option>
+                            <option value="Career">Career</option>
+                            <option value="MusicArts">Music & Arts</option>
+                            <option value="School">School</option>
+                            <option value="Travel">Travel</option>
+                            <option value="AnimalNature">Animals & Nature</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                    <label for="email">Your Story/Quote</label>
+                        <textarea 
+                        class="form-control textarea" 
+                        rows="6"
+                        id="_story"
+                        name="my_story"
+                        maxlength="500"
+                        required
+                        placeholder="Share us something about your day or quotes here... You're safe to express your feelings and thoughts! Thank you :D"
+                        ></textarea>
+                        <small class="text-danger">
+                            Note: Be careful of your input. You cannot change it anymore once you shared it. Unless, you delete it.
+                        </small>
+                      </div>
+                        <div class="form-group d-flex justify-content-between">
+                            <input 
+                                type="reset"
+                                class="btn btn-coffee"
+                                value="Reset"
+                            />
+                            <input 
+                                type="submit"
+                                id="btnCreateStory"
+                                class="btn btn-coffee"
+                                value="Create"
+                            />
+                        </div>
+                  </form>
+                  <hr/>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12" id="all_my_stories">
+                <% if(isAuth) { %>
+                    <h4 class="text-center mb-2">
+                        <%=titleStories%>
+                    </h4>
+                    <i id="toggle_cards" class="fas fa-arrow-up float-right"></i>
+                    <div class="clearfix"></div>
+                    <% if(stories.length > 0) { %>
+                        <% stories.map(story => {%>
+                            <div 
+                                class="card active"
+                                data-sender="<%=email%>"
+                                data-id="<%=story.id%>" 
+                            >
+                            <div class="card-header">
+                                <h5 class="card-title"><%=story.title%></h5>
+                            </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><%=story.title%></h5>
+                                    <p 
+                                        class="card-text accordionate" 
+                                        id="accordion">
+                                        <%=story.story%>
+                                        <p class="toggle-accordion">Read More</p>
+                                    </p>
+                                    <% if (isAuth) { %>
+                                        <button class="btn btn-sm deleteStory">Delete permanently</button>
+                                    <% } else { %>
+                                        <p class="card-text"><small class="text-muted">Sent by <%=story.nickname %></small></p>
+                                    <% } %>
+                                </div>
+                            </div>
+                        <% }) %>
+                    <% }  else { %>
+                        <h5 class="text-center lead">No stories added yet.</h5>
+                    <% } %>
+                <%} else { %>
+                    <h4 class="text-center mb-2">
+                        <%=titleStories%>
+                    </h4>
+                    <p class="text-center text-secondary text-sm">
+                        You are using free version. Please login to see your created stories.
+                    </p>
+                    <small>
+                        <p class="text-center text-secondary text-sm">
+                            View all stories <a style="text-decoration: underline;" href ="/istorya/stories">here</a> including your recently created story.
+                        </p>
+                    </small>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/js/stories.js"></script>
+<script src="/js/api.js"></script>
+<script src="/js/story.js"></script>
+</html>
