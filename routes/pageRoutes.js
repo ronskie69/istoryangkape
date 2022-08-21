@@ -18,7 +18,7 @@ router.get('/login',checkAuth, (req, res) => {
 });
 
 router.get('/stories', (req, res) => {
-    let limit = 5;
+    let limit = 10;
     let search_query= req.query.search_query
 
     let search = search_query ? {nickname: search_query } : {}
@@ -48,7 +48,7 @@ router.get('/stories', (req, res) => {
 
 router.get('/stories/:page', (req, res) => {
     const { search_query } = req.query
-    let limit = 5;
+    let limit = 10;
     let page = parseInt(req.params.page) <= 0 ? 1 : parseInt(req.params.page);
 
     Story
