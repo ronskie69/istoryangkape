@@ -79,12 +79,27 @@ if(next){
 }
 
 
-//share on socmed
+//share on socmed and detect url in story
 let storiesTwt = document.querySelectorAll(".card .share_twt");
 let cardStory = document.querySelectorAll(".card .story_text");
 let cardAuthor = document.querySelectorAll(".card .sharer");
 
-storiesTwt.forEach(function(val, key){
+
+
+function urlify(text) {
+    const urlRegex = /(?:(?:https?:\/\/)|(?:www\.))[^\s]+/g;
+    return text.replace(urlRegex, function(url) {
+      return `<a target="_blank" class ="detected-link" href="${url}">${url}</a>`;
+    })
+}
+
+cards.forEach((card,i) => {
+    console.log(urlify(cardStory[i].innerHTML))
+    cardStory[i].innerHTML = urlify(cardStory[i].innerHTML)
+})
+
+
+storiesTwt.forEach((val, key)=>{
     storiesTwt[key].addEventListener('click', function(e){
         let twtUri = "https://twitter.com/intent/tweet?text="+encodeURIComponent(cardStory[key].innerHTML+" - "+cardAuthor[key].innerHTML);
         this.setAttribute("href", twtUri);
