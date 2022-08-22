@@ -134,3 +134,7 @@ body{
     font-size: 13px;
     text-decoration: underline;
 }
+.detected-link {
+    color: #3399ff !important;
+    text-decoration: underline !important;
+}
